@@ -3,6 +3,7 @@ import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
+import { ModalViewComponent } from './modal-view/modal-view.component';
 
 @NgModule({
     bootstrap: [
@@ -13,7 +14,11 @@ import { AppComponent } from "./app.component";
         AppRoutingModule
     ],
     declarations: [
-        AppComponent
+        AppComponent,
+         ModalViewComponent
+    ],
+    entryComponents: [
+         ModalViewComponent
     ],
     schemas: [
         NO_ERRORS_SCHEMA

@@ -2,15 +2,20 @@
     <Label class="action-bar-title" text="Home"></Label>
 </ActionBar>
 
-<GridLayout class="page page-content">
-    <!-- <ListView [items]="items" class="list-group">
-        <ng-template let-item="item">
-            <Label [nsRouterLink]="['../item', item.id]" [text]="item.name" class="list-group-item"></Label>
-        </ng-template>
-    </ListView> -->
-    <RadListView [items]="items" class="list-group">
-        <ng-template let-item="item">
-            <Label [nsRouterLink]="['../item', item.id]" [text]="item.name" class="list-group-item"></Label>
-        </ng-template>
-    </RadListView>
-</GridLayout>
+<StackLayout>
+    <Button text="open modal" (tap)="modalTap()"></Button>
+
+    <GridLayout (swipe)="onSwipe($event)" class="page page-content">
+
+        <ListView [items]="items" class="list-group">
+            <ng-template let-item="item">
+                <Label [nsRouterLink]="['../item', item.id]" [text]="item.name" class="list-group-item"></Label>
+            </ng-template>
+        </ListView>
+        <!-- <RadListView [items]="items" class="list-group">
+            <ng-template let-item="item">
+                <Label [nsRouterLink]="['../item', item.id]" [text]="item.name" class="list-group-item"></Label>
+            </ng-template>
+        </RadListView> -->
+    </GridLayout>
+</StackLayout>
