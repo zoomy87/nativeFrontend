@@ -4,18 +4,17 @@
 
 <StackLayout>
     <Button text="open modal" (tap)="modalTap()"></Button>
+    <!-- <Button text="print home line" (tap)="printTimeline()"></Button> -->
 
     <GridLayout (swipe)="onSwipe($event)" class="page page-content">
 
-        <ListView [items]="items" class="list-group">
-            <ng-template let-item="item">
-                <Label [nsRouterLink]="['../item', item.id]" [text]="item.name" class="list-group-item"></Label>
+        <ListView [items]="items" (itemTap)="itemTapped($event)" class="list-group">
+            <ng-template let-item="item" >
+                <!-- <Label [text]="item.fromUser"></Label> -->
+                item.fromUser
+                <Label [nsRouterLink]="['../item', item.id]" [text]="item.text" class="list-group-item"></Label>
+                
             </ng-template>
         </ListView>
-        <!-- <RadListView [items]="items" class="list-group">
-            <ng-template let-item="item">
-                <Label [nsRouterLink]="['../item', item.id]" [text]="item.name" class="list-group-item"></Label>
-            </ng-template>
-        </RadListView> -->
-    </GridLayout>
+    </GridLayout> 
 </StackLayout>

@@ -31,7 +31,6 @@ import { NativeScriptFormsModule } from "nativescript-angular/forms";
     declarations: [
         HomeComponent,
         ItemDetailComponent,
-        // ModalViewComponent
     ],
     schemas: [
         NO_ERRORS_SCHEMA

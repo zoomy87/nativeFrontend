@@ -1,7 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { RouterExtensions } from "nativescript-angular/router";
-import { DataService, IDataItem } from "../../shared/data.service";
+import { TwitterService } from "../../shared/twitter/twitter.service";
+import { Tweet } from "../../shared/twitter/tweet";
 
 @Component({
     selector: "ItemDetail",
@@ -9,10 +10,10 @@ import { DataService, IDataItem } from "../../shared/data.service";
     templateUrl: "./item-detail.component.html"
 })
 export class ItemDetailComponent implements OnInit {
-    item: IDataItem;
+    item: Tweet;
 
     constructor(
-        private _data: DataService,
+        private _data: TwitterService,
         private _route: ActivatedRoute,
         private _routerExtensions: RouterExtensions
     ) { }

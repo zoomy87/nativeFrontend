@@ -2,6 +2,7 @@ import { NgModule } from "@angular/core";
 import { Routes } from "@angular/router";
 import { NSEmptyOutletComponent } from "nativescript-angular";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
+import { ItemDetailComponent } from "./home/item-detail/item-detail.component";
 
 const routes: Routes = [
     {
@@ -16,6 +17,7 @@ const routes: Routes = [
         loadChildren: "~/app/home/home.module#HomeModule",
         outlet: "homeTab"
     },
+    
     {
         path: "browse",
         component: NSEmptyOutletComponent,
